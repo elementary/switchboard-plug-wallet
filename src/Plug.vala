@@ -21,6 +21,28 @@ public class Payments.Plug : Switchboard.Plug {
     private MainView main_view;
 
     public Plug () {}
+
+    public override Gtk.Widget get_widget () {
+        if (main_view == null) {
+            main_view = new MainView ();
+            main_view.quit_plug.connect (() => hidden ());
+        }
+
+        return main_view;
+    }
+
+    public override void shown () {}
+
+    public override void hidden () {}
+
+    public override void search_callback (string location) {}
+
+    // 'search' returns results like ("Keyboard → Behavior → Duration", "keyboard<sep>behavior")
+    public override async Gee.TreeMap<string, string> search (string search) {
+        var search_results = new Gee.TreeMap<string, string> ((GLib.CompareDataFunc<string>)strcmp, (Gee.EqualDataFunc<string>)str_equal);
+        /*search_results.set ("%s → %s".printf (display_name, _("General")), "");*/
+        return search_results;
+    }
 }
 
 public Switchboard.Plug get_plug (Module module) {
