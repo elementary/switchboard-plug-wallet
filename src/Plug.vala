@@ -22,11 +22,11 @@ public class Payments.Plug : Switchboard.Plug {
 
     public Plug () {
         var settings = new Gee.TreeMap<string, string?> (null, null);
-        settings.set ("network/bluetooth", null);
+        settings.set ("personal/payments", null);
         Object (category: Category.PERSONAL,
             code_name: "personal-pantheon-payments",
             display_name: _("Payments"),
-            description: _("Configure Payment Settings"),
+            description: _("Manage payment methods"),
             icon: "payment-card",
             supported_settings: settings);
 }
