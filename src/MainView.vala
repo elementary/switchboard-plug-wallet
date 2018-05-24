@@ -22,23 +22,15 @@ public class Payments.MainView : Granite.SimpleSettingsPage {
 
     public MainView () {
         Object (
-            icon_name: "payment-method-card",
+            icon_name: "payment-card",
             title: _("Payment Method"),
-            activatable: true,
+            activatable: false,
             description: _("Used to buy apps in AppCenter. You are always prompted before a payment.")
         );
     }
 
     construct {
-        var empty_alert = new Granite.Widgets.AlertView (
-            _("No Payment Methods"),
-            _("Add a payment method."),
-            "dialog-information"
-        );
-        empty_alert.show_all ();
-
-        margin = 12;
-        margin_bottom = 0;
+        content_area.add (new Gtk.Label ("Test"));
 
         show_all ();
     }

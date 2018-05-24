@@ -20,7 +20,16 @@
 public class Payments.Plug : Switchboard.Plug {
     private MainView main_view;
 
-    public Plug () {}
+    public Plug () {
+        var settings = new Gee.TreeMap<string, string?> (null, null);
+        settings.set ("network/bluetooth", null);
+        Object (category: Category.PERSONAL,
+            code_name: "personal-pantheon-payments",
+            display_name: _("Payments"),
+            description: _("Configure Payment Settings"),
+            icon: "payment-card",
+            supported_settings: settings);
+}
 
     public override Gtk.Widget get_widget () {
         if (main_view == null) {
@@ -31,18 +40,27 @@ public class Payments.Plug : Switchboard.Plug {
         return main_view;
     }
 
-    public override void shown () {}
+    public override void shown () {
 
-    public override void hidden () {}
+    }
 
-    public override void search_callback (string location) {}
+    public override void hidden () {
 
-    // 'search' returns results like ("Keyboard → Behavior → Duration", "keyboard<sep>behavior")
+    }
+
+    public override void search_callback (string location) {
+
+    }
+
     public override async Gee.TreeMap<string, string> search (string search) {
         var search_results = new Gee.TreeMap<string, string> ((GLib.CompareDataFunc<string>)strcmp, (Gee.EqualDataFunc<string>)str_equal);
-        /*search_results.set ("%s → %s".printf (display_name, _("General")), "");*/
+        search_results.set ("%s → %s".printf (display_name, _("Credit Card")), "");
+        search_results.set ("%s → %s".printf (display_name, _("Debit Card")), "");
+        search_results.set ("%s → %s".printf (display_name, _("Payments")), "");
+        search_results.set ("%s → %s".printf (display_name, _("AppCenter")), "");
+        search_results.set ("%s → %s".printf (display_name, _("Fund")), "");
         return search_results;
-    }
+}
 }
 
 public Switchboard.Plug get_plug (Module module) {
