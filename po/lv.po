@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-23 23:44-0600\n"
+"POT-Creation-Date: 2019-06-26 22:45+0200\n"
 "PO-Revision-Date: 2018-05-23 23:41-0600\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,6 +18,30 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
+#: src/Plug.vala:28 src/Plug.vala:59
+msgid "Payments"
+msgstr ""
+
+#: src/Plug.vala:29
+msgid "Manage payment methods"
+msgstr ""
+
+#: src/Plug.vala:57
+msgid "Credit Card"
+msgstr ""
+
+#: src/Plug.vala:58
+msgid "Debit Card"
+msgstr ""
+
+#: src/Plug.vala:60
+msgid "AppCenter"
+msgstr ""
+
+#: src/Plug.vala:61
+msgid "Fund"
+msgstr ""
+
 #: src/MainView.vala:26
 msgid "Payment Method"
 msgstr ""
@@ -25,12 +49,4 @@ msgstr ""
 #: src/MainView.vala:28
 msgid ""
 "Used to buy apps in AppCenter. You are always prompted before a payment."
-msgstr ""
-
-#: src/MainView.vala:34
-msgid "No Payment Methods"
-msgstr ""
-
-#: src/MainView.vala:35
-msgid "Add a payment method."
 msgstr ""
