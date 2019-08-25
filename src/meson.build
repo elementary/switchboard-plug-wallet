@@ -4,6 +4,7 @@ plug_files = files(
 )
 
 switchboard_dep = dependency('switchboard-2.0')
+switchboard_plugsdir = switchboard_dep.get_pkgconfig_variable('plugsdir', define_variable: ['libdir', libdir])
 
 shared_module(
     meson.project_name(),
@@ -15,6 +16,6 @@ shared_module(
         switchboard_dep
     ],
     install: true,
-    install_dir : join_paths(switchboard_dep.get_pkgconfig_variable('plugsdir'), 'personal')
+    install_dir : join_paths(switchboard_plugsdir, 'personal')
 )
 
