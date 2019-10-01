@@ -35,4 +35,3 @@ public class Payments.MainView : Granite.SimpleSettingsPage {
         show_all ();
     }
 }
-
