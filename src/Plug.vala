@@ -53,7 +53,10 @@ public class Payments.Plug : Switchboard.Plug {
     }
 
     public override async Gee.TreeMap<string, string> search (string search) {
-        var search_results = new Gee.TreeMap<string, string> ((GLib.CompareDataFunc<string>)strcmp, (Gee.EqualDataFunc<string>)str_equal);
+        var search_results = new Gee.TreeMap<string, string> (
+            (GLib.CompareDataFunc<string>)strcmp,
+            (Gee.EqualDataFunc<string>)str_equal
+        );
         search_results.set ("%s → %s".printf (display_name, _("Credit Card")), "");
         search_results.set ("%s → %s".printf (display_name, _("Debit Card")), "");
         search_results.set ("%s → %s".printf (display_name, _("Payments")), "");
@@ -68,4 +71,3 @@ public Switchboard.Plug get_plug (Module module) {
     var plug = new Payments.Plug ();
     return plug;
 }
-
