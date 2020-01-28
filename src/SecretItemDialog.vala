@@ -45,6 +45,7 @@ public class Wallet.SecretItemDialog : Granite.MessageDialog {
         var username = attributes.get ("username");
         if (username != null) {
             var username_label = new Gtk.Label (_("Username:"));
+            username_label.halign = Gtk.Align.END;
 
             var username_entry = new Gtk.Entry ();
             username_entry.sensitive = false;
@@ -55,6 +56,7 @@ public class Wallet.SecretItemDialog : Granite.MessageDialog {
         }
 
         var password_label = new Gtk.Label (_("Password:"));
+        password_label.halign = Gtk.Align.END;
 
         password_entry = new Gtk.Entry ();
         password_entry.hexpand = true;
