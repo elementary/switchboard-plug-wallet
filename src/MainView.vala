@@ -36,6 +36,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         placeholder.show ();
 
         listbox = new Gtk.ListBox ();
+        listbox.activate_on_single_click = false;
         listbox.expand = true;
         listbox.set_placeholder (placeholder);
         listbox.set_sort_func ((Gtk.ListBoxSortFunc) sort_func);

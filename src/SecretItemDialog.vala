@@ -55,5 +55,10 @@ public class Wallet.SecretItemDialog : Granite.MessageDialog {
         grid.show_all ();
 
         custom_bin.add (grid);
+
+        foreach (unowned string key in attributes.get_keys ()) {
+            critical (key);
+            critical (attributes.get (key));
+        }
     }
 }
