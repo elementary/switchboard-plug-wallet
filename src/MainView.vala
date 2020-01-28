@@ -38,6 +38,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         listbox = new Gtk.ListBox ();
         listbox.expand = true;
         listbox.set_placeholder (placeholder);
+        listbox.set_sort_func ((Gtk.ListBoxSortFunc) sort_func);
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.add (listbox);
@@ -56,21 +57,40 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             var default_collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
 
             foreach (unowned Secret.Item secret_item in default_collection.get_items ()) {
-                var label = new Gtk.Label (secret_item.get_label ());
-                label.xalign = 0;
+                var secret_item_row = new SecretItemRow (secret_item);
 
-                var grid = new Gtk.Grid ();
-                grid.column_spacing = 6;
-                grid.margin = 6;
-                grid.add (new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND));
-                grid.add (label);
-
-                listbox.add (grid);
+                listbox.add (secret_item_row);
             }
 
             listbox.show_all ();
         } catch (Error error) {
             critical (error.message);
+        }
+    }
+
+    [CCode (instance_pos = -1)]
+    private int sort_func (SecretItemRow row1, SecretItemRow row2) {
+        return row1.secret_item.get_label ().collate (row2.secret_item.get_label ());
+    }
+
+    private class SecretItemRow : Gtk.ListBoxRow {
+        public Secret.Item secret_item { get; construct; }
+
+        public SecretItemRow (Secret.Item secret_item) {
+            Object (secret_item: secret_item);
+        }
+
+        construct {
+            var label = new Gtk.Label (secret_item.get_label ());
+            label.xalign = 0;
+
+            var grid = new Gtk.Grid ();
+            grid.column_spacing = 6;
+            grid.margin = 6;
+            grid.add (new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND));
+            grid.add (label);
+
+            add (grid);
         }
     }
 }
