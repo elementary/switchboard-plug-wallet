@@ -54,20 +54,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         listbox.row_activated.connect ((row) => {
             var secret_item = ((SecretItemRow) row).secret_item;
 
-            var epoch = (int64) secret_item.get_created ();
-            var datetime = new DateTime.from_unix_utc (epoch);
-
-            var grid = new Gtk.Grid ();
-            grid.orientation = Gtk.Orientation.VERTICAL;
-            grid.add (new Gtk.Label (Granite.DateTime.get_relative_datetime (datetime)));
-            grid.show_all ();
-
-            var dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                secret_item.get_label (),
-                secret_item.get_schema_name (),
-                "dialog-password"
-            );
-            dialog.custom_bin.add (grid);
+            var dialog = new SecretItemDialog (secret_item);
             dialog.transient_for = (Gtk.Window) get_toplevel ();
             dialog.run ();
             dialog.destroy ();

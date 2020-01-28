@@ -1,6 +1,7 @@
 plug_files = files(
     'MainView.vala',
     'Plug.vala',
+    'SecretItemDialog.vala',
     'SecretItemRow.vala'
 )
 

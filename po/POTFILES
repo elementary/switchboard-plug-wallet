@@ -1,3 +1,4 @@
 src/MainView.vala
 src/Plug.vala
+src/SecretItemDialog.vala
 src/SecretItemRow.vala
