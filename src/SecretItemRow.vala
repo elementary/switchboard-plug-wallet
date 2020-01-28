@@ -59,11 +59,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
         revealer.add (grid);
 
-        var eventbox = new Gtk.EventBox ();
-        eventbox.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK | Gdk.EventMask.LEAVE_NOTIFY_MASK);
-        eventbox.add (revealer);
-
-        add (eventbox);
+        add (revealer);
 
         var attributes = secret_item.get_attributes ();
 
@@ -84,20 +80,6 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
                 destroy ();
                 return false;
             });
-        });
-
-        eventbox.enter_notify_event.connect (() => {
-            close_revealer.reveal_child = true;
-            return Gdk.EVENT_STOP;
-        });
-
-        eventbox.leave_notify_event.connect ((event) => {
-            if (event.detail == Gdk.NotifyType.INFERIOR) {
-                return Gdk.EVENT_PROPAGATE;
-            }
-
-            close_revealer.reveal_child = is_selected ();
-            return Gdk.EVENT_STOP;
         });
     }
 }
