@@ -18,6 +18,8 @@
 public class Wallet.SecretItemDialog : Granite.MessageDialog {
     public Secret.Item secret_item { get; construct; }
 
+    private Gtk.Entry password_entry;
+
     public SecretItemDialog (Secret.Item secret_item) {
         Object (
             buttons: Gtk.ButtonsType.CLOSE,
@@ -52,13 +54,41 @@ public class Wallet.SecretItemDialog : Granite.MessageDialog {
             grid.attach (username_entry, 1, 0);
         }
 
+        var password_label = new Gtk.Label (_("Password:"));
+
+        password_entry = new Gtk.Entry ();
+        password_entry.hexpand = true;
+        password_entry.input_purpose = Gtk.InputPurpose.PASSWORD;
+        password_entry.sensitive = false;
+        password_entry.visibility = false;
+
+        var password_visible_check = new Gtk.CheckButton.with_label (_("Show password"));
+        password_visible_check.bind_property ("active", password_entry, "visibility");
+
+        grid.attach (password_label, 0, 1);
+        grid.attach (password_entry, 1, 1);
+        grid.attach (password_visible_check, 1, 2);
         grid.show_all ();
 
         custom_bin.add (grid);
 
+        init_secret.begin ();
+
         foreach (unowned string key in attributes.get_keys ()) {
             critical (key);
             critical (attributes.get (key));
+        }
+    }
+
+    private async void init_secret () {
+        try {
+            yield secret_item.load_secret (null);
+
+            var secret_value = secret_item.get_secret ();
+
+            password_entry.text = secret_value.get_text ();
+        } catch (Error error) {
+            critical (error.message);
         }
     }
 }
