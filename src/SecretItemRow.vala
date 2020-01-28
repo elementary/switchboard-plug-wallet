@@ -17,14 +17,13 @@
 
 public class Wallet.SecretItemRow : Gtk.ListBoxRow {
     public Secret.Item secret_item { get; construct; }
-    public string title { get; private set; }
 
     public SecretItemRow (Secret.Item secret_item) {
         Object (secret_item: secret_item);
     }
 
     construct {
-        var title_label = new Gtk.Label (null);
+        var title_label = new Gtk.Label (secret_item.get_label ());
         title_label.hexpand = true;
         title_label.xalign = 0;
 
@@ -46,15 +45,6 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         add (grid);
 
         var attributes = secret_item.get_attributes ();
-
-        var target_origin = attributes.get ("target_origin");
-        if (target_origin != null) {
-            title_label.label = target_origin;
-            title = target_origin;
-        } else {
-            title_label.label = secret_item.get_label ();
-            title = secret_item.get_label ();
-        }
 
         var username = attributes.get ("username");
         if (username != null) {
