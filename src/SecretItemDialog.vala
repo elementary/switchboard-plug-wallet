@@ -23,21 +23,35 @@ public class Wallet.SecretItemDialog : Granite.MessageDialog {
             buttons: Gtk.ButtonsType.CLOSE,
             image_icon: new ThemedIcon ("dialog-password"),
             primary_text: secret_item.get_label (),
-            secondary_text: secret_item.get_schema_name (),
             secret_item: secret_item
         );
     }
 
     construct {
-        var modified_label = new Gtk.Label (
+        secondary_text = _("Last modified %s").printf (
             Granite.DateTime.get_relative_datetime (
                 new DateTime.from_unix_utc ((int64) secret_item.get_created ())
             )
         );
 
+        var attributes = secret_item.get_attributes ();
+
         var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.add (modified_label);
+        grid.column_spacing = 12;
+        grid.row_spacing = 12;
+
+        var username = attributes.get ("username");
+        if (username != null) {
+            var username_label = new Gtk.Label (_("Username:"));
+
+            var username_entry = new Gtk.Entry ();
+            username_entry.sensitive = false;
+            username_entry.text = username;
+
+            grid.attach (username_label, 0, 0);
+            grid.attach (username_entry, 1, 0);
+        }
+
         grid.show_all ();
 
         custom_bin.add (grid);
