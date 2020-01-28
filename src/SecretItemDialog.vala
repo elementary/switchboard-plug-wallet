@@ -30,13 +30,21 @@ public class Wallet.SecretItemDialog : Granite.MessageDialog {
     }
 
     construct {
+        var attributes = secret_item.get_attributes ();
+
+        int64 unix_time;
+        var server_time_modified = attributes.get ("server_time_modified");
+        if (server_time_modified != null) {
+            unix_time = server_time_modified.to_int64 ();
+        } else {
+            unix_time = (int64) secret_item.get_created ();
+        }
+
         secondary_text = _("Last modified %s").printf (
             Granite.DateTime.get_relative_datetime (
-                new DateTime.from_unix_utc ((int64) secret_item.get_created ())
+                new DateTime.from_unix_utc (unix_time)
             )
         );
-
-        var attributes = secret_item.get_attributes ();
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
