@@ -79,6 +79,6 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
 
     [CCode (instance_pos = -1)]
     private int sort_func (SecretItemRow row1, SecretItemRow row2) {
-        return row1.secret_item.get_label ().collate (row2.secret_item.get_label ());
+        return row1.title.collate (row2.title);
     }
 }

@@ -17,15 +17,20 @@
 
 public class Wallet.SecretItemRow : Gtk.ListBoxRow {
     public Secret.Item secret_item { get; construct; }
+    public string title { get; private set; }
 
     public SecretItemRow (Secret.Item secret_item) {
         Object (secret_item: secret_item);
     }
 
     construct {
-        var label = new Gtk.Label (secret_item.get_label ());
-        label.hexpand = true;
-        label.xalign = 0;
+        var title_label = new Gtk.Label (null);
+        title_label.hexpand = true;
+        title_label.xalign = 0;
+
+        var description = new Gtk.Label (null);
+        description.use_markup = true;
+        description.xalign = 0;
 
         var button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.BUTTON);
         button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -33,11 +38,30 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         var grid = new Gtk.Grid ();
         grid.column_spacing = 6;
         grid.margin = 6;
-        grid.add (new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND));
-        grid.add (label);
-        grid.add (button);
+        grid.attach (new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND), 0, 0, 1, 2);
+        grid.attach (title_label, 1, 0);
+        grid.attach (description, 1, 1);
+        grid.attach (button, 2, 0, 1, 2);
 
         add (grid);
+
+        var attributes = secret_item.get_attributes ();
+
+        var target_origin = attributes.get ("target_origin");
+        if (target_origin != null) {
+            title_label.label = target_origin;
+            title = target_origin;
+        } else {
+            title_label.label = secret_item.get_label ();
+            title = secret_item.get_label ();
+        }
+
+        var username = attributes.get ("username");
+        if (username != null) {
+            description.label = "<small>%s</small>".printf (username);
+        } else {
+            description.label = "<small>%s</small>".printf (secret_item.get_schema_name ());
+        }
 
         button.clicked.connect (() => {
             activate ();
