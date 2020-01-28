@@ -50,6 +50,28 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         show_all ();
 
         init_default_collection.begin ();
+
+        listbox.row_activated.connect ((row) => {
+            var secret_item = ((SecretItemRow) row).secret_item;
+
+            var epoch = (int64) secret_item.get_created ();
+            var datetime = new DateTime.from_unix_utc (epoch);
+
+            var grid = new Gtk.Grid ();
+            grid.orientation = Gtk.Orientation.VERTICAL;
+            grid.add (new Gtk.Label (Granite.DateTime.get_relative_datetime (datetime)));
+            grid.show_all ();
+
+            var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                secret_item.get_label (),
+                secret_item.get_schema_name (),
+                "dialog-password"
+            );
+            dialog.custom_bin.add (grid);
+            dialog.transient_for = (Gtk.Window) get_toplevel ();
+            dialog.run ();
+            dialog.destroy ();
+        });
     }
 
     private async void init_default_collection () {
@@ -82,15 +104,24 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
 
         construct {
             var label = new Gtk.Label (secret_item.get_label ());
+            label.hexpand = true;
             label.xalign = 0;
+
+            var button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.BUTTON);
+            button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
             var grid = new Gtk.Grid ();
             grid.column_spacing = 6;
             grid.margin = 6;
             grid.add (new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND));
             grid.add (label);
+            grid.add (button);
 
             add (grid);
+
+            button.clicked.connect (() => {
+                activate ();
+            });
         }
     }
 }
