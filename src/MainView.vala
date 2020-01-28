@@ -94,34 +94,4 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
     private int sort_func (SecretItemRow row1, SecretItemRow row2) {
         return row1.secret_item.get_label ().collate (row2.secret_item.get_label ());
     }
-
-    private class SecretItemRow : Gtk.ListBoxRow {
-        public Secret.Item secret_item { get; construct; }
-
-        public SecretItemRow (Secret.Item secret_item) {
-            Object (secret_item: secret_item);
-        }
-
-        construct {
-            var label = new Gtk.Label (secret_item.get_label ());
-            label.hexpand = true;
-            label.xalign = 0;
-
-            var button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.BUTTON);
-            button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-            var grid = new Gtk.Grid ();
-            grid.column_spacing = 6;
-            grid.margin = 6;
-            grid.add (new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND));
-            grid.add (label);
-            grid.add (button);
-
-            add (grid);
-
-            button.clicked.connect (() => {
-                activate ();
-            });
-        }
-    }
 }

@@ -1,6 +1,7 @@
 plug_files = files(
+    'MainView.vala',
     'Plug.vala',
-    'MainView.vala'
+    'SecretItemRow.vala'
 )
 
 switchboard_dep = dependency('switchboard-2.0')

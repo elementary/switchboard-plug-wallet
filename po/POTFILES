@@ -1,2 +1,3 @@
-src/Plug.vala
 src/MainView.vala
+src/Plug.vala
+src/SecretItemRow.vala
