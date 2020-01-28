@@ -31,11 +31,12 @@ public class Wallet.Plug : Switchboard.Plug {
             icon: "payment-card",
             supported_settings: settings
         );
-}
+    }
 
     public override Gtk.Widget get_widget () {
         if (main_view == null) {
             main_view = new MainView ();
+            main_view.margin = 12;
         }
 
         return main_view;

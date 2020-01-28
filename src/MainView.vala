@@ -24,14 +24,23 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         Object (
             icon_name: "payment-card",
             title: _("Wallet"),
-            activatable: false,
-            description: _("Used to buy apps in AppCenter. You are always prompted before a payment.")
+            activatable: false
         );
     }
 
     construct {
-        content_area.add (new Gtk.Label ("Test"));
+        var placeholder = new Gtk.Label (_("Empty Wallet"));
+        placeholder.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        placeholder.show ();
 
+        var listbox = new Gtk.ListBox ();
+        listbox.expand = true;
+        listbox.set_placeholder (placeholder);
+
+        var frame = new Gtk.Frame (null);
+        frame.add (listbox);
+
+        content_area.add (frame);
         show_all ();
     }
 }
