@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 elementary LLC.
+ * Copyright 2018-2020 elementary, Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,13 +17,13 @@
  * Authored by: Cassidy James Blaede <c@ssidyjam.es>
  */
 
-public class Payments.MainView : Granite.SimpleSettingsPage {
+public class Wallet.MainView : Granite.SimpleSettingsPage {
     public signal void quit_plug ();
 
     public MainView () {
         Object (
             icon_name: "payment-card",
-            title: _("Payment Method"),
+            title: _("Wallet"),
             activatable: false,
             description: _("Used to buy apps in AppCenter. You are always prompted before a payment.")
         );

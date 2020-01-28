@@ -1,6 +1,5 @@
-project('payments', 'vala', 'c')
+project('io.elementary.switchboard.wallet', 'vala', 'c')
 
-gettext_name = meson.project_name() + '-plug'
 gnome = import('gnome')
 i18n = import('i18n')
 
@@ -8,7 +7,7 @@ prefix = get_option('prefix')
 libdir = join_paths(prefix, get_option('libdir'))
 
 add_project_arguments(
-    '-DGETTEXT_PACKAGE="@0@"'.format(gettext_name),
+    '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
     language:'c'
 )
 

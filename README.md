@@ -1,4 +1,4 @@
-# Switchboard Payments Plug
+# Wallet
 
 ## Building and Installation
 

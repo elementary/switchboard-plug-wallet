@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 elementary LLC.
+ * Copyright 2018-2020 elementary, Inc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,24 +17,25 @@
  * Authored by: Cassidy James Blaede <c@ssidyjam.es>
  */
 
-public class Payments.Plug : Switchboard.Plug {
+public class Wallet.Plug : Switchboard.Plug {
     private MainView main_view;
 
     public Plug () {
         var settings = new Gee.TreeMap<string, string?> (null, null);
         settings.set ("personal/payments", null);
-        Object (category: Category.PERSONAL,
-            code_name: "personal-pantheon-payments",
-            display_name: _("Payments"),
+        Object (
+            category: Category.PERSONAL,
+            code_name: "io.elementary.switchboard.wallet",
+            display_name: _("Wallet"),
             description: _("Manage payment methods"),
             icon: "payment-card",
-            supported_settings: settings);
+            supported_settings: settings
+        );
 }
 
     public override Gtk.Widget get_widget () {
         if (main_view == null) {
             main_view = new MainView ();
-            main_view.quit_plug.connect (() => hidden ());
         }
 
         return main_view;
@@ -60,14 +61,13 @@ public class Payments.Plug : Switchboard.Plug {
         search_results.set ("%s → %s".printf (display_name, _("Credit Card")), "");
         search_results.set ("%s → %s".printf (display_name, _("Debit Card")), "");
         search_results.set ("%s → %s".printf (display_name, _("Payments")), "");
-        search_results.set ("%s → %s".printf (display_name, _("AppCenter")), "");
+        search_results.set ("%s → %s".printf (display_name, _("Wallet")), "");
         search_results.set ("%s → %s".printf (display_name, _("Fund")), "");
         return search_results;
 }
 }
 
 public Switchboard.Plug get_plug (Module module) {
-    debug ("Activating Payments plug");
-    var plug = new Payments.Plug ();
+    var plug = new Wallet.Plug ();
     return plug;
 }
