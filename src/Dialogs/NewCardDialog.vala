@@ -100,12 +100,14 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
         response.connect (on_response);
 
         card_number_entry.changed.connect (() => {
-            validate (1, card_number_entry.card_number);
+            validate_card_number (card_number_entry.card_number);
+            validate_form ();
         });
 
         card_expiration_entry.changed.connect (() => {
             card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
-            validate (2, card_expiration_entry.text);
+            validate_expiration (card_expiration_entry.text);
+            validate_form ();
         });
 
         card_expiration_entry.focus_out_event.connect (() => {
@@ -118,44 +120,18 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
 
         card_cvc_entry.changed.connect (() => {
             card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
-            validate (3, card_cvc_entry.text);
+            validate_cvc (card_cvc_entry.text);
+            validate_form ();
         });
     }
 
-    private void validate (int entry, string new_text) {
-        try {
-            switch (entry) {
-                case 1:
-                    card_valid = is_card_valid (new_text);
-                    break;
-                case 2:
-                    if (new_text.length < 4) {
-                        expiration_valid = false;
-                    } else {
-                        var regex = new Regex ("""^[0-9]{2}\/?[0-9]{2}$""");
-                        expiration_valid = regex.match (new_text);
-                    }
-                    break;
-                case 3:
-                    var regex = new Regex ("""[0-9]{3,4}""");
-                    cvc_valid = regex.match (new_text);
-                    break;
-            }
-        } catch (Error e) {
-            warning (e.message);
-        }
-
-        if (card_valid && expiration_valid && cvc_valid) {
-            pay_button.sensitive = true;
-        } else {
-            pay_button.sensitive = false;
-        }
-    }
-
-    private bool is_card_valid (string numbers) {
+    private void validate_card_number (string numbers) {
         var char_count = numbers.char_count ();
 
-        if (char_count < 14) return false;
+        if (char_count < 14) {
+            card_valid = false;
+            return;
+        }
 
         int hash = int.parse (numbers[char_count - 1:char_count]);
 
@@ -173,7 +149,39 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
             sum += number;
         }
 
-        return (10 - (sum % 10)) % 10 == hash;
+        card_valid = (10 - (sum % 10)) % 10 == hash;
+    }
+
+    private void validate_expiration (string expiration) {
+        if (expiration.length < 4) {
+            expiration_valid = false;
+        } else {
+            try {
+                var regex = new Regex ("""^[0-9]{2}\/?[0-9]{2}$""");
+                expiration_valid = regex.match (expiration);
+            } catch (Error e) {
+                critical (e.message);
+                expiration_valid = false;
+            }
+        }
+    }
+
+    private void validate_cvc (string cvc) {
+        try {
+            var regex = new Regex ("""[0-9]{3,4}""");
+            cvc_valid = regex.match (cvc);
+        } catch (Error e) {
+            critical (e.message);
+            cvc_valid = false;
+        }
+    }
+
+    private void validate_form () {
+        if (card_valid && expiration_valid && cvc_valid) {
+            pay_button.sensitive = true;
+        } else {
+            pay_button.sensitive = false;
+        }
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {
