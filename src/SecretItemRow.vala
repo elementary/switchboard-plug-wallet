@@ -49,6 +49,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         close_revealer.add (delete_button);
 
         var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DND);
+        image.use_fallback = true;
 
         var title_label = new Gtk.Label (secret_item.get_label ());
         title_label.hexpand = true;
