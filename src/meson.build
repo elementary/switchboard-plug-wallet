@@ -3,7 +3,6 @@ plug_files = files(
     'Widgets/CardNumberEntry.vala',
     'MainView.vala',
     'Plug.vala',
-    'SecretItemDialog.vala',
     'SecretItemRow.vala'
 )
 

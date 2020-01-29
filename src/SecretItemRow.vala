@@ -59,9 +59,6 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         description.use_markup = true;
         description.xalign = 0;
 
-        var button = new Gtk.Button.from_icon_name ("view-more-horizontal-symbolic", Gtk.IconSize.BUTTON);
-        button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         var grid = new Gtk.Grid ();
         grid.column_spacing = 6;
         grid.margin = 6;
@@ -70,7 +67,6 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         grid.attach (image, 1, 0, 1, 2);
         grid.attach (title_label, 2, 0);
         grid.attach (description, 2, 1);
-        grid.attach (button, 3, 0, 1, 2);
 
         var revealer = new Gtk.Revealer ();
         revealer.reveal_child = true;
@@ -92,10 +88,6 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         if (brand != null) {
             image.icon_name = "payment-card-%s".printf (brand.down ());
         }
-
-        button.clicked.connect (() => {
-            activate ();
-        });
 
         delete_button.clicked.connect (() => {
             revealer.transition_duration = 195;

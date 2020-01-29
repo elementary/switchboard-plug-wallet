@@ -2,5 +2,4 @@ src/Dialogs/NewCardDialog.vala
 src/Widgets/CardNumberEntry.vala
 src/MainView.vala
 src/Plug.vala
-src/SecretItemDialog.vala
 src/SecretItemRow.vala

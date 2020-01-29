@@ -30,9 +30,12 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
     }
 
     construct {
-        var placeholder = new Gtk.Label (_("Empty Wallet"));
-        placeholder.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-        placeholder.show ();
+        var placeholder = new Granite.Widgets.AlertView (
+            _("Save payment methods for later"),
+            _("Add payment methods to Wallet by clicking the icon in the toolbar below."),
+            ""
+        );
+        placeholder.show_all ();
 
         listbox = new Gtk.ListBox ();
         listbox.activate_on_single_click = false;
@@ -72,15 +75,6 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             new_card_dialog.run ();
         });
 
-        listbox.row_activated.connect ((row) => {
-            var secret_item = ((SecretItemRow) row).secret_item;
-
-            var dialog = new SecretItemDialog (secret_item);
-            dialog.transient_for = (Gtk.Window) get_toplevel ();
-            dialog.run ();
-            dialog.destroy ();
-        });
-
         listbox.selected_rows_changed.connect (() => {
             foreach (unowned Gtk.Widget row in listbox.get_children ()) {
                 ((SecretItemRow) row).close_revealer.reveal_child = ((SecretItemRow) row).is_selected ();
@@ -91,21 +85,33 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
     private async void init_collection () {
         try {
             collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
+            update_rows ();
 
-            foreach (unowned Secret.Item secret_item in collection.get_items ()) {
-                if (secret_item.get_schema_name () != "io.elementary.switchboard.wallet") {
-                    continue;
-                }
+            collection.notify["modified"].connect (() => {
+                update_rows ();
+            });
 
-                var secret_item_row = new SecretItemRow (secret_item);
-
-                listbox.add (secret_item_row);
-            }
-
-            listbox.show_all ();
         } catch (Error error) {
             critical (error.message);
         }
+    }
+
+    private void update_rows () {
+        foreach (unowned Gtk.Widget widget in listbox.get_children ()) {
+            widget.destroy ();
+        }
+
+        foreach (unowned Secret.Item secret_item in collection.get_items ()) {
+            if (secret_item.get_schema_name () != "io.elementary.switchboard.wallet") {
+                continue;
+            }
+
+            var secret_item_row = new SecretItemRow (secret_item);
+
+            listbox.add (secret_item_row);
+        }
+
+        listbox.show_all ();
     }
 
     [CCode (instance_pos = -1)]
