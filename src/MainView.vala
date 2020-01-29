@@ -44,13 +44,33 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.add (listbox);
 
+        var add_button = new Gtk.Button.with_label (_("Add Payment Method…"));
+        add_button.always_show_image = true;
+        add_button.image = new Gtk.Image.from_icon_name (_("list-add-symbolic"), Gtk.IconSize.SMALL_TOOLBAR);
+        add_button.margin = 3;
+        add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var action_bar = new Gtk.ActionBar ();
+        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+        action_bar.add (add_button);
+
+        var grid = new Gtk.Grid ();
+        grid.attach (scrolled_window, 0, 0);
+        grid.attach (action_bar, 0, 1);
+
         var frame = new Gtk.Frame (null);
-        frame.add (scrolled_window);
+        frame.add (grid);
 
         content_area.add (frame);
         show_all ();
 
         init_default_collection.begin ();
+
+        add_button.clicked.connect (() => {
+            var new_card_dialog = new NewCardDialog ();
+            new_card_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            new_card_dialog.run ();
+        });
 
         listbox.row_activated.connect ((row) => {
             var secret_item = ((SecretItemRow) row).secret_item;

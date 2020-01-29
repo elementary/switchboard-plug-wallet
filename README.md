@@ -6,7 +6,9 @@ You'll need the following dependencies:
 
 * libgranite-dev>=0.5
 * libgtk-3-dev
+* libjson-glib-dev
 * libsecret-1-dev
+* libsoup2.4-dev
 * libswitchboard-2.0-dev
 * meson
 * valac
