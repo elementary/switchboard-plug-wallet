@@ -98,6 +98,10 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
                 return false;
             });
         });
+
+        focus_out_event.connect (() => {
+            close_revealer.reveal_child = false;
+        });
     }
 
     private async void delete_secret () {
