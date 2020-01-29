@@ -1,9 +1,9 @@
 plug_files = files(
     'Dialogs/NewCardDialog.vala',
     'Widgets/CardNumberEntry.vala',
+    'Widgets/SecretItemRow.vala',
     'MainView.vala',
-    'Plug.vala',
-    'SecretItemRow.vala'
+    'Plug.vala'
 )
 
 switchboard_dep = dependency('switchboard-2.0')
