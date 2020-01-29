@@ -177,11 +177,7 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
     }
 
     private void validate_form () {
-        if (card_valid && expiration_valid && cvc_valid) {
-            pay_button.sensitive = true;
-        } else {
-            pay_button.sensitive = false;
-        }
+        pay_button.sensitive = card_valid && expiration_valid && cvc_valid;
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {
