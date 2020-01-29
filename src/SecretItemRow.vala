@@ -102,9 +102,18 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
             revealer.reveal_child = false;
 
             GLib.Timeout.add (revealer.transition_duration, () => {
-                destroy ();
+                delete_secret ();
                 return false;
             });
         });
+    }
+
+    private async void delete_secret () {
+        try {
+            yield secret_item.delete (null);
+            destroy ();
+        } catch (Error error) {
+            critical (error.message);
+        }
     }
 }
