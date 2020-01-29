@@ -1,4 +1,6 @@
 plug_files = files(
+    'Dialogs/NewCardDialog.vala',
+    'Widgets/CardNumberEntry.vala',
     'MainView.vala',
     'Plug.vala',
     'SecretItemDialog.vala',
