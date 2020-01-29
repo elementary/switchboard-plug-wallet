@@ -48,6 +48,8 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         close_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
         close_revealer.add (delete_button);
 
+        var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DND);
+
         var title_label = new Gtk.Label (secret_item.get_label ());
         title_label.hexpand = true;
         title_label.xalign = 0;
@@ -64,7 +66,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         grid.margin = 6;
         grid.margin_start = 0;
         grid.attach (close_revealer, 0, 0, 1, 2);
-        grid.attach (new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DND), 1, 0, 1, 2);
+        grid.attach (image, 1, 0, 1, 2);
         grid.attach (title_label, 2, 0);
         grid.attach (description, 2, 1);
         grid.attach (button, 3, 0, 1, 2);
@@ -78,11 +80,16 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
 
         var attributes = secret_item.get_attributes ();
 
-        var username = attributes.get ("username");
-        if (username != null) {
-            description.label = "<small>%s</small>".printf (username);
+        var exp = attributes.get ("exp");
+        if (exp != null) {
+            description.label = "<small>%s</small>".printf (_("Expires %s").printf (exp));
         } else {
             description.label = "<small>%s</small>".printf (secret_item.get_schema_name ());
+        }
+
+        var brand = attributes.get ("brand");
+        if (brand != null) {
+            image.icon_name = "payment-card-%s".printf (brand.down ());
         }
 
         button.clicked.connect (() => {

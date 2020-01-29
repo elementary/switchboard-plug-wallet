@@ -141,25 +141,27 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
     }
 
     private async void create_secret_item () {
-        var attributes = new HashTable<string,string> (null, null);
+        var schema = new Secret.Schema (
+            "io.elementary.switchboard.wallet", Secret.SchemaFlags.NONE,
+            "brand", Secret.SchemaAttributeType.STRING,
+            "exp", Secret.SchemaAttributeType.STRING
+        );
 
         var brand = card_number_entry.card_type.to_string ();
+
+        var attributes = new GLib.HashTable<string, string> (GLib.str_hash, GLib.str_equal);
+        attributes["brand"] = brand;
+        attributes["exp"] = card_expiration_entry.text;
 
         var secret = "
           {
             \"card\": {
-              \"brand\": \"%s\",
               \"number\": %s,
-              \"exp_month\" %s,
-              \"exp_year\" %s,
               \"cvc\" %s
             }
           }
         ".printf (
-            brand,
             card_number_entry.card_number,
-            "1",
-            "2024",
             card_cvc_entry.text
         );
 
@@ -175,7 +177,7 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
         try {
             yield Secret.Item.create (
                 collection,
-                null,
+                schema,
                 attributes,
                 label,
                 secret_value,
