@@ -90,7 +90,9 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         });
 
         delete_button.clicked.connect (() => {
+            revealer.transition_duration = 195;
             revealer.reveal_child = false;
+
             GLib.Timeout.add (revealer.transition_duration, () => {
                 destroy ();
                 return false;
