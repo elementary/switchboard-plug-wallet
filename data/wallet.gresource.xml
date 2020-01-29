@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/elementary/switchboard/wallet">
+    <file alias="SecretItemRow.css" compressed="true">SecretItemRow.css</file>
+  </gresource>
+</gresources>

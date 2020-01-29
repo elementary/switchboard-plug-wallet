@@ -19,19 +19,34 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
     public Gtk.Revealer close_revealer { get; private set; }
     public Secret.Item secret_item { get; construct; }
 
+    private static Gtk.CssProvider css_provider;
+
     public SecretItemRow (Secret.Item secret_item) {
         Object (secret_item: secret_item);
     }
 
+    static construct {
+        css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("io/elementary/switchboard/wallet/SecretItemRow.css");
+    }
+
     construct {
-        var close_button = new Gtk.Button.from_icon_name ("window-close-symbolic", Gtk.IconSize.BUTTON);
-        close_button.margin_start = 6;
-        close_button.valign = Gtk.Align.CENTER;
-        close_button.get_style_context ().add_class ("close");
+        var delete_image = new Gtk.Image.from_icon_name ("window-close-symbolic", Gtk.IconSize.BUTTON);
+        delete_image.get_style_context ().add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        var delete_button = new Gtk.Button ();
+        delete_button.image = delete_image;
+        delete_button.margin_start = 6;
+        delete_button.tooltip_text = (_("Delete"));
+        delete_button.valign = Gtk.Align.CENTER;
+
+        unowned Gtk.StyleContext delete_button_context = delete_button.get_style_context ();
+        delete_button_context.add_class ("delete");
+        delete_button_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         close_revealer = new Gtk.Revealer ();
         close_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
-        close_revealer.add (close_button);
+        close_revealer.add (delete_button);
 
         var title_label = new Gtk.Label (secret_item.get_label ());
         title_label.hexpand = true;
@@ -74,7 +89,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
             activate ();
         });
 
-        close_button.clicked.connect (() => {
+        delete_button.clicked.connect (() => {
             revealer.reveal_child = false;
             GLib.Timeout.add (revealer.transition_duration, () => {
                 destroy ();
