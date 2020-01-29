@@ -19,8 +19,9 @@
 
 public class Wallet.CardNumberEntry : Gtk.Entry {
     public string card_number { get; set; }
+    public CardType card_type { get; private set; default = CardType.UNKNOWN; }
 
-    private enum CardType {
+    public enum CardType {
         UNKNOWN,
         VISA,
         MASTERCARD,
@@ -28,10 +29,30 @@ public class Wallet.CardNumberEntry : Gtk.Entry {
         DISCOVER,
         DINERS_CLUB,
         JCB,
-        UNIONPAY
+        UNIONPAY;
+
+        public string to_string () {
+            switch (this) {
+                case VISA:
+                    return "Visa";
+                case MASTERCARD:
+                    return "MasterCard";
+                case AMERICAN_EXPRESS:
+                    return "American Express";
+                case DISCOVER:
+                    return "Discover";
+                case DINERS_CLUB:
+                    return "Diners Club";
+                case JCB:
+                    return "JCB";
+                case UNIONPAY:
+                    return "UnionPay";
+                default:
+                    return "Unknown";
+            }
+        }
     }
 
-    private CardType card_type = CardType.UNKNOWN;
     private uint timeout = 0;
     private bool insertion = true;
 

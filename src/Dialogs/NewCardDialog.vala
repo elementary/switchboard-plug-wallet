@@ -21,6 +21,9 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
     public Secret.Collection collection { get; construct; }
 
     private Gtk.Button pay_button;
+    private Gtk.Entry card_expiration_entry;
+    private Gtk.Entry card_cvc_entry;
+    private Wallet.CardNumberEntry card_number_entry;
 
     private bool card_valid = false;
     private bool expiration_valid = false;
@@ -44,12 +47,12 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
-        var card_number_entry = new Wallet.CardNumberEntry ();
+        card_number_entry = new Wallet.CardNumberEntry ();
         card_number_entry.activates_default = true;
         card_number_entry.hexpand = true;
         card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
-        var card_expiration_entry = new Gtk.Entry ();
+        card_expiration_entry = new Gtk.Entry ();
         card_expiration_entry.activates_default = true;
         card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 5;
@@ -57,7 +60,7 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
         card_expiration_entry.placeholder_text = _("MM / YY");
         card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
 
-        var card_cvc_entry = new Gtk.Entry ();
+        card_cvc_entry = new Gtk.Entry ();
         card_cvc_entry.activates_default = true;
         card_cvc_entry.hexpand = true;
         card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
@@ -138,27 +141,36 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
     }
 
     private async void create_secret_item () {
-        var secret = """
-            "card": {
-                "brand": %s,
-                "number": %s,
-                "exp_month" %s,
-                "exp_year" %s,
-                "cvc" %s
+        var attributes = new HashTable<string,string> (null, null);
+
+        var brand = card_number_entry.card_type.to_string ();
+
+        var secret = "
+          {
+            \"card\": {
+              \"brand\": \"%s\",
+              \"number\": %s,
+              \"exp_month\" %s,
+              \"exp_year\" %s,
+              \"cvc\" %s
             }
-        """.printf (
-            "Visa",
-            "4242424242424242",
+          }
+        ".printf (
+            brand,
+            card_number_entry.card_number,
             "1",
             "2024",
-            "123"
+            card_cvc_entry.text
         );
 
-        var secret_value = new Secret.Value (secret, -1, "text/plain");
+        var secret_value = new Secret.Value (secret, -1, "text/json");
 
-        var label = "Test Card";
+        var last_four = card_number_entry.card_number.substring (
+            card_number_entry.card_number.length - 4,
+            4
+        );
 
-        var attributes = new HashTable<string,string> (null, null);
+        var label = _("%s ending in %s").printf (brand, last_four);
 
         try {
             yield Secret.Item.create (
