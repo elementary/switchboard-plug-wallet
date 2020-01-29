@@ -60,6 +60,12 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             dialog.run ();
             dialog.destroy ();
         });
+
+        listbox.selected_rows_changed.connect (() => {
+            foreach (unowned Gtk.Widget row in listbox.get_children ()) {
+                ((SecretItemRow) row).close_revealer.reveal_child = ((SecretItemRow) row).is_selected ();
+            }
+        });
     }
 
     private async void init_default_collection () {
@@ -80,6 +86,6 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
 
     [CCode (instance_pos = -1)]
     private int sort_func (SecretItemRow row1, SecretItemRow row2) {
-        return row1.title.collate (row2.title);
+        return row1.secret_item.get_label ().collate (row2.secret_item.get_label ());
     }
 }
