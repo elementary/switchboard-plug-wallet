@@ -18,9 +18,7 @@ shared_module(
         dependency('glib-2.0'),
         dependency('granite'),
         dependency('gtk+-3.0'),
-        dependency('json-glib-1.0'),
         dependency('libsecret-1'),
-        dependency ('libsoup-2.4'),
         switchboard_dep
     ],
     install: true,
