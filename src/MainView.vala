@@ -93,6 +93,10 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
 
             foreach (unowned Secret.Item secret_item in collection.get_items ()) {
+                if (secret_item.get_schema_name () != "io.elementary.switchboard.wallet") {
+                    continue;
+                }
+
                 var secret_item_row = new SecretItemRow (secret_item);
 
                 listbox.add (secret_item_row);
