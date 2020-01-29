@@ -18,11 +18,17 @@
 */
 
 public class Wallet.NewCardDialog : Gtk.Dialog {
+    public Secret.Collection collection { get; construct; }
+
     private Gtk.Button pay_button;
 
     private bool card_valid = false;
     private bool expiration_valid = false;
     private bool cvc_valid = false;
+
+    public NewCardDialog (Secret.Collection collection) {
+        Object (collection: collection);
+    }
 
     construct {
         var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG);
@@ -97,7 +103,13 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
         deletable = false;
         resizable = false;
 
-        response.connect (on_response);
+        response.connect ((response_id) => {
+            if (response_id == Gtk.ResponseType.APPLY) {
+                create_secret_item.begin ();
+            }
+
+            destroy ();
+        });
 
         card_number_entry.changed.connect (() => {
             validate_card_number (card_number_entry.card_number);
@@ -123,6 +135,44 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
             validate_cvc (card_cvc_entry.text);
             validate_form ();
         });
+    }
+
+    private async void create_secret_item () {
+        var secret = """
+            "card": {
+                "brand": %s,
+                "number": %s,
+                "exp_month" %s,
+                "exp_year" %s,
+                "cvc" %s
+            }
+        """.printf (
+            "Visa",
+            "4242424242424242",
+            "1",
+            "2024",
+            "123"
+        );
+
+        var secret_value = new Secret.Value (secret, -1, "text/plain");
+
+        var label = "Test Card";
+
+        var attributes = new HashTable<string,string> (null, null);
+
+        try {
+            yield Secret.Item.create (
+                collection,
+                null,
+                attributes,
+                label,
+                secret_value,
+                Secret.ItemCreateFlags.NONE,
+                null
+            );
+        } catch (Error error) {
+            critical (error.message);
+        }
     }
 
     private void validate_card_number (string numbers) {
@@ -178,17 +228,5 @@ public class Wallet.NewCardDialog : Gtk.Dialog {
 
     private void validate_form () {
         pay_button.sensitive = card_valid && expiration_valid && cvc_valid;
-    }
-
-    private void on_response (Gtk.Dialog source, int response_id) {
-        switch (response_id) {
-            case Gtk.ResponseType.APPLY:
-
-                break;
-            case Gtk.ResponseType.CLOSE:
-
-                destroy ();
-                break;
-        }
     }
 }

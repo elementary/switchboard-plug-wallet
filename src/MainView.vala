@@ -18,9 +18,8 @@
  */
 
 public class Wallet.MainView : Granite.SimpleSettingsPage {
-    public signal void quit_plug ();
-
     private Gtk.ListBox listbox;
+    private Secret.Collection collection;
 
     public MainView () {
         Object (
@@ -65,10 +64,10 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         content_area.add (frame);
         show_all ();
 
-        init_default_collection.begin ();
+        init_collection.begin ();
 
         add_button.clicked.connect (() => {
-            var new_card_dialog = new NewCardDialog ();
+            var new_card_dialog = new NewCardDialog (collection);
             new_card_dialog.transient_for = (Gtk.Window) get_toplevel ();
             new_card_dialog.run ();
         });
@@ -89,11 +88,11 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         });
     }
 
-    private async void init_default_collection () {
+    private async void init_collection () {
         try {
-            var default_collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
+            collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
 
-            foreach (unowned Secret.Item secret_item in default_collection.get_items ()) {
+            foreach (unowned Secret.Item secret_item in collection.get_items ()) {
                 var secret_item_row = new SecretItemRow (secret_item);
 
                 listbox.add (secret_item_row);
