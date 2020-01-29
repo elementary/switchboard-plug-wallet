@@ -11,6 +11,12 @@ add_project_arguments(
     language:'c'
 )
 
+css_gresource = gnome.compile_resources(
+    'css-resource',
+    join_paths('data', 'wallet.gresource.xml'),
+    source_dir: 'data'
+)
+
 subdir('src')
 subdir('po')
 

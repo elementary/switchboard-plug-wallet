@@ -80,6 +80,12 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             dialog.run ();
             dialog.destroy ();
         });
+
+        listbox.selected_rows_changed.connect (() => {
+            foreach (unowned Gtk.Widget row in listbox.get_children ()) {
+                ((SecretItemRow) row).close_revealer.reveal_child = ((SecretItemRow) row).is_selected ();
+            }
+        });
     }
 
     private async void init_default_collection () {
