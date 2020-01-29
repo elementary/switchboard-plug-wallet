@@ -24,7 +24,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
 
     public MainView () {
         Object (
-            icon_name: "payment-card",
+            icon_name: "io.elementary.switchboard.wallet",
             title: _("Wallet"),
             activatable: false
         );

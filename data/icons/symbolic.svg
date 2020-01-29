@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   width="16"
+   height="16">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <path
+     id="rect825"
+     d="M 1.5 1 C 0.669 1 0 1.669 0 2.5 L 0 13.5 C 0 14.331 0.669 15 1.5 15 L 14.5 15 C 15.331 15 16 14.331 16 13.5 L 16 2.5 C 16 1.669 15.331 1 14.5 1 L 1.5 1 z M 1.5 2 L 14.5 2 C 14.777 2 15 2.223 15 2.5 L 15 4 L 1 4 L 1 2.5 C 1 2.223 1.223 2 1.5 2 z M 1 5 L 15 5 L 15 5.5 L 15 7 L 1 7 L 1 5.5 L 1 5 z M 8.5 9 L 10 9 L 12.5 9 L 15 9 L 15 12 L 12.5 12 L 10 12 L 8.5 12 C 7.669 12 7 11.331 7 10.5 C 7 9.669 7.669 9 8.5 9 z M 8.5 10 A 0.5 0.5 0 0 0 8 10.5 A 0.5 0.5 0 0 0 8.5 11 A 0.5 0.5 0 0 0 9 10.5 A 0.5 0.5 0 0 0 8.5 10 z "
+     style="opacity:1;vector-effect:none;fill:#666666;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <path
+     id="rect819"
+     d="M 8.5,9 C 7.669,9 7,9.669 7,10.5 7,11.331 7.669,12 8.5,12 H 10 12.5 15 V 9 H 12.5 10 Z"
+     style="opacity:0.5;fill:#666666;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 2;stroke-dashoffset:0.5;stroke-opacity:1" />
+</svg>

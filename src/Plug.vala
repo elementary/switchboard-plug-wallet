@@ -28,7 +28,7 @@ public class Wallet.Plug : Switchboard.Plug {
             code_name: "io.elementary.switchboard.wallet",
             display_name: _("Wallet"),
             description: _("Manage payment methods"),
-            icon: "payment-card",
+            icon: "io.elementary.switchboard.wallet",
             supported_settings: settings
         );
     }
