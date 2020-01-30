@@ -1,5 +1,7 @@
 # Wallet
 
+[![Translation status](https://l10n.elementary.io/widgets/switchboard/-/wallet/svg-badge.svg)](https://l10n.elementary.io/engage/switchboard/?utm_source=widget)
+
 ## Building and Installation
 
 You'll need the following dependencies:
