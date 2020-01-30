@@ -1,0 +1,19 @@
+Source: io.elementary.switchboard.wallet
+Section: x11
+Priority: optional
+Maintainer: elementary, Inc. <builds@elementary.io>
+Build-Depends: debhelper (>= 10.5.1),
+               libgranite-dev,
+               libgtk-3-dev,
+               libsecret-1-dev,
+               libswitchboard-2.0-dev,
+               meson,
+               valac
+Standards-Version: 4.1.1
+
+Package: io.elementary.switchboard.wallet
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Enhances: switchboard
+Description: Wallet for Switchboard
+ Manage payment methods in elementary OS System Settings
