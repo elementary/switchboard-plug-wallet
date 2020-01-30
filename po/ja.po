@@ -7,45 +7,96 @@ msgid ""
 msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:45+0200\n"
+"POT-Creation-Date: 2020-01-30 14:29-0800\n"
 "PO-Revision-Date: 2018-05-23 23:41-0600\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/Plug.vala:28 src/Plug.vala:59
-msgid "Payments"
+#: src/Dialogs/NewCardDialog.vala:40
+msgid "Add a new card"
 msgstr ""
 
-#: src/Plug.vala:29
+#: src/Dialogs/NewCardDialog.vala:44
+msgid "Card information is stored encrypted, on your device."
+msgstr ""
+
+#. / TRANSLATORS: Don't change the order, only transliterate
+#: src/Dialogs/NewCardDialog.vala:60
+msgid "MM / YY"
+msgstr ""
+
+#: src/Dialogs/NewCardDialog.vala:68
+msgid "CVC"
+msgstr ""
+
+#: src/Dialogs/NewCardDialog.vala:99
+msgid "Cancel"
+msgstr ""
+
+#: src/Dialogs/NewCardDialog.vala:101
+msgid "Add Card"
+msgstr ""
+
+#: src/Dialogs/NewCardDialog.vala:175
+#, c-format
+msgid "%s ending in %s"
+msgstr ""
+
+#: src/Widgets/CardNumberEntry.vala:62
+msgid "Card Number"
+msgstr ""
+
+#: src/Widgets/SecretItemRow.vala:40
+msgid "Delete"
+msgstr ""
+
+#: src/Widgets/SecretItemRow.vala:82
+#, c-format
+msgid "Expires %s"
+msgstr ""
+
+#: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
+msgid "Wallet"
+msgstr ""
+
+#: src/MainView.vala:34
+msgid "Save payment methods for later"
+msgstr ""
+
+#: src/MainView.vala:35
+msgid ""
+"Add payment methods to Wallet by clicking the icon in the toolbar below."
+msgstr ""
+
+#: src/MainView.vala:50
+msgid "Add Payment Method…"
+msgstr ""
+
+#: src/MainView.vala:52
+msgid "list-add-symbolic"
+msgstr ""
+
+#: src/Plug.vala:30
 msgid "Manage payment methods"
 msgstr ""
 
-#: src/Plug.vala:57
+#: src/Plug.vala:62
 msgid "Credit Card"
 msgstr ""
 
-#: src/Plug.vala:58
+#: src/Plug.vala:63
 msgid "Debit Card"
 msgstr ""
 
-#: src/Plug.vala:60
-msgid "AppCenter"
+#: src/Plug.vala:64
+msgid "Payments"
 msgstr ""
 
-#: src/Plug.vala:61
+#: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
-
-#: src/MainView.vala:26
-msgid "Payment Method"
-msgstr ""
-
-#: src/MainView.vala:28
-msgid ""
-"Used to buy apps in AppCenter. You are always prompted before a payment."
 msgstr ""
