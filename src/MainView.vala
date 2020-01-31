@@ -49,7 +49,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
 
         var add_button = new Gtk.Button.with_label (_("Add Payment Method…"));
         add_button.always_show_image = true;
-        add_button.image = new Gtk.Image.from_icon_name (_("list-add-symbolic"), Gtk.IconSize.SMALL_TOOLBAR);
+        add_button.image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         add_button.margin = 3;
         add_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
