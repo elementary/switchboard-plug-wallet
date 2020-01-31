@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-30 14:29-0800\n"
 "PO-Revision-Date: 2020-01-31 18:04+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/switchboard/"
 "wallet/ca/>\n"
 "Language: ca\n"
@@ -21,20 +21,20 @@ msgstr ""
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "Afegiu-hi una targeta nova"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "La informació de la targeta es desa encriptada, al vostre dispositiu."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / AA"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
@@ -42,16 +42,16 @@ msgstr "Cancel·la"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr ""
+msgstr "Afegiu-hi una targeta"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s acabada amb %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr ""
+msgstr "Número de la targeta"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
@@ -60,45 +60,47 @@ msgstr "Suprimeix"
 #: src/Widgets/SecretItemRow.vala:82
 #, c-format
 msgid "Expires %s"
-msgstr ""
+msgstr "Caduca el %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
-msgstr ""
+msgstr "Cartera"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr ""
+msgstr "Desa els mètodes de pagament per a més tard."
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"Afegiu mètodes de pagament a la cartera clicant a la icona de la barra "
+"d'eines  de baix."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
+msgstr "Afegiu-hi un mètode de pagament…"
 
 #: src/MainView.vala:52
 msgid "list-add-symbolic"
-msgstr ""
+msgstr "list-add-symbolic"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "Gestioneu els mètodes de pagament"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "Targeta de crèdit"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "Targeta de dèbit"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "Pagaments"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "Fons"
