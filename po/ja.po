@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-01-31 18:04+0000\n"
+"PO-Revision-Date: 2020-02-02 01:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/switchboard/"
 "wallet/ja/>\n"
@@ -47,7 +47,7 @@ msgstr "カードを追加"
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr "%s は %s で有効期限です"
+msgstr "%s (末尾 %s)"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
