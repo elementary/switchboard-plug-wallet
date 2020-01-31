@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 14:29-0800\n"
+"POT-Creation-Date: 2020-01-31 21:58+0000\n"
 "PO-Revision-Date: 2020-01-31 18:04+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/switchboard/"
@@ -81,10 +81,6 @@ msgstr ""
 msgid "Add Payment Method…"
 msgstr "Afegiu-hi un mètode de pagament…"
 
-#: src/MainView.vala:52
-msgid "list-add-symbolic"
-msgstr "list-add-symbolic"
-
 #: src/Plug.vala:30
 msgid "Manage payment methods"
 msgstr "Gestioneu els mètodes de pagament"
@@ -104,3 +100,6 @@ msgstr "Pagaments"
 #: src/Plug.vala:66
 msgid "Fund"
 msgstr "Fons"
+
+#~ msgid "list-add-symbolic"
+#~ msgstr "list-add-symbolic"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 14:29-0800\n"
+"POT-Creation-Date: 2020-01-31 21:58+0000\n"
 "PO-Revision-Date: 2020-01-31 18:04+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -82,10 +82,6 @@ msgstr ""
 msgid "Add Payment Method…"
 msgstr "Adicionar forma de pagamento…"
 
-#: src/MainView.vala:52
-msgid "list-add-symbolic"
-msgstr "list-add-symbolic"
-
 #: src/Plug.vala:30
 msgid "Manage payment methods"
 msgstr "Gerenciar métodos de pagamento"
@@ -105,3 +101,6 @@ msgstr "Pagamentos"
 #: src/Plug.vala:66
 msgid "Fund"
 msgstr "Reserva"
+
+#~ msgid "list-add-symbolic"
+#~ msgstr "list-add-symbolic"

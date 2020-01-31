@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 14:29-0800\n"
+"POT-Creation-Date: 2020-01-31 21:58+0000\n"
 "PO-Revision-Date: 2019-06-26 18:53+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -70,10 +70,6 @@ msgstr ""
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
-
-#: src/MainView.vala:52
-msgid "list-add-symbolic"
 msgstr ""
 
 #: src/Plug.vala:30

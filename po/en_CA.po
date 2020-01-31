@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 14:29-0800\n"
+"POT-Creation-Date: 2020-01-31 21:58+0000\n"
 "PO-Revision-Date: 2018-05-23 23:41-0600\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -79,10 +79,6 @@ msgstr ""
 #| msgid "Payment Method"
 msgid "Add Payment Method…"
 msgstr "Payment Method"
-
-#: src/MainView.vala:52
-msgid "list-add-symbolic"
-msgstr ""
 
 #: src/Plug.vala:30
 #, fuzzy

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 14:29-0800\n"
+"POT-Creation-Date: 2020-01-31 21:58+0000\n"
 "PO-Revision-Date: 2020-01-31 18:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/switchboard/"
@@ -73,15 +73,13 @@ msgstr "支払い方法を保存します"
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
-msgstr "下のツールバーにあるアイコンをクリックすると、ウォレットに支払い方法を追加できます。"
+msgstr ""
+"下のツールバーにあるアイコンをクリックすると、ウォレットに支払い方法を追加で"
+"きます。"
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
 msgstr "支払い方法を追加…"
-
-#: src/MainView.vala:52
-msgid "list-add-symbolic"
-msgstr "list-add-symbolic"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
@@ -102,3 +100,6 @@ msgstr "支払い"
 #: src/Plug.vala:66
 msgid "Fund"
 msgstr "資金提供"
+
+#~ msgid "list-add-symbolic"
+#~ msgstr "list-add-symbolic"
