@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-01-31 18:04+0000\n"
+"PO-Revision-Date: 2020-02-03 17:08+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/switchboard/wallet/"
 "nl/>\n"
@@ -68,36 +68,38 @@ msgstr "Portemonnee"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr "Bewaar betaalmethode voor later"
+msgstr "Bewaar betaalmiddel voor later gebruik"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"Voeg betaalmiddelen toe aan Portemonnee door op het icoon te klikken op de "
+"taakbalk hieronder."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr "Betaalmethode toevoegen…"
+msgstr "Betaalmiddel toevoegen…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "Beheer betaalmiddelen"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "Creditcard"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "Debitcard"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "Betalingen"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "Fonds"
 
 #~ msgid "list-add-symbolic"
 #~ msgstr "list-add-symbolic"
