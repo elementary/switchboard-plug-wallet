@@ -8,90 +8,95 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2018-05-23 23:41-0600\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-02-03 17:08+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/switchboard/"
+"wallet/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "नवीन कार्ड जोडा"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "कार्ड माहिती आपल्या डिव्हाइसवर एन्क्रिप्टेड संग्रहित केली आहे."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "मही/वर्ष"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करा"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr ""
+msgstr "कार्ड जोडा"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s  संपणारे %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr ""
+msgstr "कार्ड क्रमांक"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
-msgstr ""
+msgstr "हटवा"
 
 #: src/Widgets/SecretItemRow.vala:82
 #, c-format
 msgid "Expires %s"
-msgstr ""
+msgstr "कालबाह्य होते %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
-msgstr ""
+msgstr "पाकीट"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr ""
+msgstr "नंतरच्या वापरासाठी देयक पद्धती जतन करा"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"खाली असलेल्या टूलबारमधील पाकिटाच्या चिन्हावर क्लिक करून देय द्यायच्या पद्धती "
+"जोडा."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
+msgstr "देय द्यायची पद्धत जोडा…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "देय द्यायच्या पद्धती व्यवस्थापित करा"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "क्रेडीट कार्ड"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "डेबिट कार्ड"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "देयके"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "निधी"
