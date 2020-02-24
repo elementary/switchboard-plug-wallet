@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-02-14 17:08+0000\n"
-"Last-Translator: Daniel R. <riesp@pm.me>\n"
+"PO-Revision-Date: 2020-02-25 20:08+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/switchboard/"
 "wallet/es/>\n"
 "Language: es\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr "Añadir una nueva tarjeta"
+msgstr "Añadir una tarjeta nueva"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr "La información de la tarjeta se almacena encriptada en su dispositivo."
+msgstr "La información de la tarjeta se almacena cifrada en su dispositivo."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
@@ -74,6 +74,8 @@ msgstr "Guardar métodos de pago para más tarde"
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"Añada métodos de pago a Cartera pulsando en el icono de la barra de "
+"herramientas siguiente."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
