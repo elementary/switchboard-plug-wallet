@@ -94,22 +94,15 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
             revealer.reveal_child = false;
 
             GLib.Timeout.add (revealer.transition_duration, () => {
-                delete_secret ();
+                var schema = new Secret.Schema (
+                    "io.elementary.switchboard.wallet", Secret.SchemaFlags.NONE,
+                    "brand", Secret.SchemaAttributeType.STRING,
+                    "exp", Secret.SchemaAttributeType.STRING
+                );
+
+                Secret.password_clearv.begin (schema, secret_item.get_attributes (), null);
                 return false;
             });
         });
-
-        focus_out_event.connect (() => {
-            close_revealer.reveal_child = false;
-        });
-    }
-
-    private async void delete_secret () {
-        try {
-            yield secret_item.delete (null);
-            destroy ();
-        } catch (Error error) {
-            critical (error.message);
-        }
     }
 }
