@@ -87,7 +87,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
             update_rows ();
 
-            collection.notify["modified"].connect (() => {
+            collection.notify["items"].connect (() => {
                 update_rows ();
             });
 
