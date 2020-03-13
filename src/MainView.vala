@@ -19,7 +19,9 @@
 
 public class Wallet.MainView : Granite.SimpleSettingsPage {
     private Gtk.ListBox listbox;
-    private Secret.Collection collection;
+    private Secret.Collection? collection = null;
+
+    private const string COLLECTION_NAME = "elementary Payment Details";
 
     public MainView () {
         Object (
@@ -84,7 +86,18 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
 
     private async void init_collection () {
         try {
-            collection = yield Secret.Collection.for_alias (null, Secret.COLLECTION_DEFAULT, Secret.CollectionFlags.LOAD_ITEMS, null);
+            var service = yield Secret.Service.get (Secret.ServiceFlags.LOAD_COLLECTIONS, null);
+            var collections = service.get_collections ();
+            foreach (var c in collections) {
+                if (c.get_label () == COLLECTION_NAME) {
+                    collection = c;
+                }
+            }
+
+            if (collection == null) {
+                collection = yield Secret.Collection.create (null, COLLECTION_NAME, null, Secret.CollectionCreateFlags.NONE, null);
+            }
+
             update_rows ();
 
             collection.notify["modified"].connect (() => {
