@@ -18,6 +18,7 @@
  */
 
 public class Wallet.MainView : Granite.SimpleSettingsPage {
+    private Gtk.Overlay overlay;
     private Gtk.ListBox listbox;
     private Secret.Collection collection;
 
@@ -64,7 +65,10 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
         var frame = new Gtk.Frame (null);
         frame.add (grid);
 
-        content_area.add (frame);
+        overlay = new Gtk.Overlay ();
+        overlay.add (frame);
+
+        content_area.add (overlay);
         show_all ();
 
         init_collection.begin ();
@@ -107,11 +111,44 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
             }
 
             var secret_item_row = new SecretItemRow (secret_item);
+            secret_item_row.delete_request.connect ((secret_item) => {
+                var toast = new Granite.Widgets.Toast (_("'%s' Removed").printf (secret_item.get_label ()));
+                toast.set_default_action (_("Undo"));
+                toast.show_all ();
+
+                overlay.add_overlay (toast);
+                toast.send_notification ();
+
+                var timeout = GLib.Timeout.add (4000, () => {
+                    delete_secret (secret_item_row, secret_item);
+                    toast.destroy ();
+                    return GLib.Source.REMOVE;
+                });
+
+                toast.closed.connect (() => {
+                    delete_secret (secret_item_row, secret_item);
+                    toast.destroy ();
+                });
+
+                toast.default_action.connect (() => {
+                    Source.remove (timeout);
+                    secret_item_row.revealer.reveal_child = true;
+                });
+            });
 
             listbox.add (secret_item_row);
         }
 
         listbox.show_all ();
+    }
+
+    private async void delete_secret (SecretItemRow row, Secret.Item secret_item) {
+        try {
+            yield secret_item.delete (null);
+            row.destroy ();
+        } catch (Error error) {
+            critical (error.message);
+        }
     }
 
     [CCode (instance_pos = -1)]
