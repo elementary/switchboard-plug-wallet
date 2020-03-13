@@ -16,6 +16,9 @@
  */
 
 public class Wallet.SecretItemRow : Gtk.ListBoxRow {
+    public signal void delete_request (Secret.Item secret_item);
+
+    public Gtk.Revealer revealer { get; private set; }
     public Gtk.Revealer close_revealer { get; private set; }
     public Secret.Item secret_item { get; construct; }
 
@@ -68,7 +71,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
         grid.attach (title_label, 2, 0);
         grid.attach (description, 2, 1);
 
-        var revealer = new Gtk.Revealer ();
+        revealer = new Gtk.Revealer ();
         revealer.reveal_child = true;
         revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_UP;
         revealer.add (grid);
@@ -94,22 +97,9 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
             revealer.reveal_child = false;
 
             GLib.Timeout.add (revealer.transition_duration, () => {
-                delete_secret ();
+                delete_request (secret_item);
                 return false;
             });
         });
-
-        focus_out_event.connect (() => {
-            close_revealer.reveal_child = false;
-        });
-    }
-
-    private async void delete_secret () {
-        try {
-            yield secret_item.delete (null);
-            destroy ();
-        } catch (Error error) {
-            critical (error.message);
-        }
     }
 }
