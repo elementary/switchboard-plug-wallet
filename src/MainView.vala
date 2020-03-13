@@ -122,7 +122,7 @@ public class Wallet.MainView : Granite.SimpleSettingsPage {
                 var timeout = GLib.Timeout.add (4000, () => {
                     delete_secret (secret_item_row, secret_item);
                     toast.destroy ();
-                    return false;
+                    return GLib.Source.REMOVE;
                 });
 
                 toast.closed.connect (() => {
