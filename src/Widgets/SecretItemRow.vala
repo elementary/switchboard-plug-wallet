@@ -89,13 +89,13 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
             image.icon_name = "payment-card-%s".printf (brand.down ());
         }
 
-        delete_button.clicked.connect (() => {
+        delete_button.button_release_event.connect (() => {
             revealer.transition_duration = 195;
             revealer.reveal_child = false;
 
             GLib.Timeout.add (revealer.transition_duration, () => {
                 delete_secret ();
-                return false;
+                return Gdk.EVENT_STOP;
             });
         });
 
