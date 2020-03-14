@@ -89,7 +89,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
             image.icon_name = "payment-card-%s".printf (brand.down ());
         }
 
-        delete_button.clicked.connect (() => {
+        delete_button.button_release_event.connect (() => {
             revealer.transition_duration = 195;
             revealer.reveal_child = false;
 
@@ -101,7 +101,7 @@ public class Wallet.SecretItemRow : Gtk.ListBoxRow {
                 );
 
                 Secret.password_clearv.begin (schema, secret_item.get_attributes (), null);
-                return false;
+                return Gdk.EVENT_STOP;
             });
         });
     }
