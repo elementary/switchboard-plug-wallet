@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-02-25 20:08+0000\n"
+"PO-Revision-Date: 2020-04-30 04:10+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/switchboard/"
 "wallet/es/>\n"
@@ -83,7 +83,7 @@ msgstr "Añadir método de pago…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr "Administrar métodos de pago"
+msgstr "Gestionar métodos de pago"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
