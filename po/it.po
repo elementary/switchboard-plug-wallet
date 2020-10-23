@@ -8,91 +8,97 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2018-05-23 23:41-0600\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-10-24 14:15+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/switchboard/"
+"wallet/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "Aggiungi una nuova carta"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
 msgstr ""
+"Le informazioni della carta vengono archiviate sul tuo dispositivo in "
+"maniera crittografata."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / AA"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr ""
+msgstr "Aggiungi carta"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s che termina in %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr ""
+msgstr "Numero della carta"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
-msgstr ""
+msgstr "Elimina"
 
 #: src/Widgets/SecretItemRow.vala:82
 #, c-format
 msgid "Expires %s"
-msgstr ""
+msgstr "Scadenza %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
-msgstr ""
+msgstr "Portafoglio"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr ""
+msgstr "Salva metodi di pagamento da utilizzare in seguito"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"Aggiungi metodi di pagamento al portafoglio facendo clic sull'icona nella "
+"barra degli strumenti sottostante."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
+msgstr "Aggiungi metodo di pagamento…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "Gestisci i metodi di pagamento"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "Carta di credito"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "Carta di debito"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "Pagamenti"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "Fondi"
