@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-10-02 07:14+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"PO-Revision-Date: 2020-11-26 16:53+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "switchboard/wallet/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -30,11 +30,11 @@ msgstr "银行卡信息将加密保存在你的设备里。"
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "月份 / 年份"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "验证码"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
@@ -47,7 +47,7 @@ msgstr "添加卡"
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s 结束于 %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
@@ -58,18 +58,17 @@ msgid "Delete"
 msgstr "删除"
 
 #: src/Widgets/SecretItemRow.vala:82
-#, c-format, fuzzy
+#, c-format
 msgid "Expires %s"
-msgstr "过期于 %s"
+msgstr "过期时间 %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
 msgstr "钱包"
 
 #: src/MainView.vala:34
-#, fuzzy
 msgid "Save payment methods for later"
-msgstr "保存支付信息，为之后的付款做准备"
+msgstr "保存支付信息"
 
 #: src/MainView.vala:35
 msgid ""
@@ -90,12 +89,12 @@ msgstr "信用卡"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "借记卡"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "支付方法"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "资金"
