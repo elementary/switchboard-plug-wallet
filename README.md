@@ -1,4 +1,4 @@
-# Wallet
+# Switchboard Wallet Plug
 
 [![Translation status](https://l10n.elementary.io/widgets/switchboard/-/wallet/svg-badge.svg)](https://l10n.elementary.io/engage/switchboard/?utm_source=widget)
 
