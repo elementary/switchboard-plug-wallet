@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2021-04-26 11:13+0000\n"
+"PO-Revision-Date: 2021-04-26 11:19+0000\n"
 "Last-Translator: EpixMan <abdullahgtgt@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/switchboard/"
 "wallet/ar/>\n"
@@ -26,7 +26,7 @@ msgstr "اضف بطاقة جديدة"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "معلومات البطاقة ستخزن بشكل مشفر، على جهازك"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
