@@ -8,92 +8,94 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2018-05-23 23:41-0600\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-04-27 13:10+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/switchboard/"
+"wallet/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "Dodaj novo kartico"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "Podatki o kartici so shranjeni samo na vaši napravi v šifrirani obliki."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / LL"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr ""
+msgstr "Dodaj kartico"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s s koncem številke %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr ""
+msgstr "Številka kartice"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: src/Widgets/SecretItemRow.vala:82
 #, c-format
 msgid "Expires %s"
-msgstr ""
+msgstr "Poteče %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
-msgstr ""
+msgstr "Denarnica"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr ""
+msgstr "Shranite podatke o plačilih"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
-msgstr ""
+msgstr "Dodajte nove načine plačila v Denarnico s klikom na ikono spodaj."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
+msgstr "Dodaj način plačila…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "Uredi načine plačila"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "Kreditna kartica"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "Debetna kartica"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "Plačila"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "Fond"

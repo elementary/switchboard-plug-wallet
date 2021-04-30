@@ -8,91 +8,95 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2018-05-23 23:41-0600\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-05-27 13:11+0000\n"
+"Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
+"Language-Team: Danish <https://l10n.elementary.io/projects/switchboard/"
+"wallet/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "Tilføj et nyt kort"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "Kort information er gemt, krypteret, på din enhed."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / ÅÅ"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
-msgstr ""
+msgstr "Annuller"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr ""
+msgstr "Tilføj Kort"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s slutter i %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr ""
+msgstr "Kort Nummer"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
-msgstr ""
+msgstr "Slet"
 
 #: src/Widgets/SecretItemRow.vala:82
 #, c-format
 msgid "Expires %s"
-msgstr ""
+msgstr "Udløber %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
-msgstr ""
+msgstr "Tegnebog"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr ""
+msgstr "Gem betalings muligheder til senere brug"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"Tilføj betalings muligheder til Tegnebogen ved, at klikke på ikonet i "
+"toolbaren nedenunder."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
+msgstr "Tilføj Betalingmulighed…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "Administrer betalingsmuligheder"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "Kreditkort"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "Debetkort"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "Betalinger"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "Finansier"

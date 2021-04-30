@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-01-31 18:04+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2021-04-26 17:51+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/switchboard/"
 "wallet/ar/>\n"
 "Language: ar\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "أضف بطاقة جديدة"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "معلومات البطاقة ستخزن بشكل مشفر، على جهازك."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "السنة / الشهر"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"

@@ -8,92 +8,96 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2018-05-23 23:41-0600\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-03-08 04:48+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/switchboard/"
+"wallet/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr ""
+msgstr "Добавить новую карту"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
-msgstr ""
+msgstr "Информация о карте хранится в зашифрованном виде на вашем устройстве."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / YY"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/NewCardDialog.vala:99
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr ""
+msgstr "Добавить Карту"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
 msgid "%s ending in %s"
-msgstr ""
+msgstr "%s окончание %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr ""
+msgstr "Номер Карты"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: src/Widgets/SecretItemRow.vala:82
 #, c-format
 msgid "Expires %s"
-msgstr ""
+msgstr "Истекает %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
 msgid "Wallet"
-msgstr ""
+msgstr "Кошелёк"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr ""
+msgstr "Сохраните способы оплаты на более поздний срок"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
+"Добавьте способы оплаты в кошелек, нажав на значок на панели инструментов "
+"ниже."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr ""
+msgstr "Добавить Способ Оплаты…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
-msgstr ""
+msgstr "Управление способами оплаты"
 
 #: src/Plug.vala:62
 msgid "Credit Card"
-msgstr ""
+msgstr "Кредитная карта"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr ""
+msgstr "Дебитовая карта"
 
 #: src/Plug.vala:64
 msgid "Payments"
-msgstr ""
+msgstr "Платежи"
 
 #: src/Plug.vala:66
 msgid "Fund"
-msgstr ""
+msgstr "Средства"
