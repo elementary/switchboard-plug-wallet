@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2021-02-15 21:09+0000\n"
+"PO-Revision-Date: 2021-05-10 20:45+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/switchboard/"
 "wallet/de/>\n"
@@ -45,7 +45,7 @@ msgid "Add Card"
 msgstr "Karte hinzufügen"
 
 #: src/Dialogs/NewCardDialog.vala:175
-#, c-format, fuzzy
+#, c-format
 msgid "%s ending in %s"
 msgstr "%s endend am %s"
 
@@ -63,7 +63,6 @@ msgid "Expires %s"
 msgstr "Gültig bis %s"
 
 #: src/MainView.vala:27 src/Plug.vala:29 src/Plug.vala:65
-#, fuzzy
 msgid "Wallet"
 msgstr "Brieftasche"
 
