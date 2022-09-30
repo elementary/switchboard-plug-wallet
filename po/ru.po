@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2022-09-30 09:40+0000\n"
+"PO-Revision-Date: 2022-09-30 09:44+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/switchboard/"
 "plug-wallet/ru/>\n"
@@ -31,7 +31,7 @@ msgstr "Информация о карте хранится в зашифров�
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/NewCardDialog.vala:60
 msgid "MM / YY"
-msgstr "MM / YY"
+msgstr "ММ / ГГ"
 
 #: src/Dialogs/NewCardDialog.vala:68
 msgid "CVC"
@@ -43,7 +43,7 @@ msgstr "Отменить"
 
 #: src/Dialogs/NewCardDialog.vala:101
 msgid "Add Card"
-msgstr "Добавить Карту"
+msgstr "Добавить карту"
 
 #: src/Dialogs/NewCardDialog.vala:175
 #, c-format
@@ -52,7 +52,7 @@ msgstr "%s окончание %s"
 
 #: src/Widgets/CardNumberEntry.vala:62
 msgid "Card Number"
-msgstr "Номер Карты"
+msgstr "Номер карты"
 
 #: src/Widgets/SecretItemRow.vala:40
 msgid "Delete"
