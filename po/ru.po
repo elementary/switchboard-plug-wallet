@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2021-03-08 04:48+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"PO-Revision-Date: 2022-09-30 09:40+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/switchboard/"
-"wallet/ru/>\n"
+"plug-wallet/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,18 +69,18 @@ msgstr "Кошелёк"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr "Сохраните способы оплаты на более поздний срок"
+msgstr "Сохраните способы оплаты на потом"
 
 #: src/MainView.vala:35
 msgid ""
 "Add payment methods to Wallet by clicking the icon in the toolbar below."
 msgstr ""
-"Добавьте способы оплаты в кошелек, нажав на значок на панели инструментов "
+"Добавьте способы оплаты в Кошелек, нажав на значок на панели инструментов "
 "ниже."
 
 #: src/MainView.vala:50
 msgid "Add Payment Method…"
-msgstr "Добавить Способ Оплаты…"
+msgstr "Добавить способ оплаты…"
 
 #: src/Plug.vala:30
 msgid "Manage payment methods"
@@ -92,7 +92,7 @@ msgstr "Кредитная карта"
 
 #: src/Plug.vala:63
 msgid "Debit Card"
-msgstr "Дебитовая карта"
+msgstr "Дебетовая карта"
 
 #: src/Plug.vala:64
 msgid "Payments"
