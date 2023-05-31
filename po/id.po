@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: payments-plug\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-31 21:58+0000\n"
-"PO-Revision-Date: 2020-11-18 15:15+0000\n"
-"Last-Translator: deovaliandro <mdv16h@student.unhas.ac.id>\n"
+"PO-Revision-Date: 2023-05-31 13:41+0000\n"
+"Last-Translator: Ujang Nana Sukmana <ujex23@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/switchboard/"
-"wallet/id/>\n"
+"plug-wallet/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #: src/Dialogs/NewCardDialog.vala:40
 msgid "Add a new card"
-msgstr "Tambahkan sebuah kartu baru"
+msgstr "Tambah Kartu Baru"
 
 #: src/Dialogs/NewCardDialog.vala:44
 msgid "Card information is stored encrypted, on your device."
@@ -70,7 +70,7 @@ msgstr "Dompet"
 
 #: src/MainView.vala:34
 msgid "Save payment methods for later"
-msgstr "Simpan metode pemabayaran untuk dipakai berikutnya"
+msgstr "Simpan metode pembayaran nanti"
 
 #: src/MainView.vala:35
 msgid ""
